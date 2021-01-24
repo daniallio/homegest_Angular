@@ -7,13 +7,15 @@ import { SpesaComponent } from './spesa/spesa.component';
 import { NavComponent } from './nav/nav.component';
 import { FormSpesaComponent } from './form-spesa/form-spesa.component';
 import { FormsModule } from '@angular/forms';
+import { SpesaElencoComponent } from './spesa-elenco/spesa-elenco.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpesaComponent,
     NavComponent,
-    FormSpesaComponent
+    FormSpesaComponent,
+    SpesaElencoComponent
   ],
   imports: [
     BrowserModule,

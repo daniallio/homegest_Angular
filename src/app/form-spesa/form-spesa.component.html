@@ -1,8 +1,11 @@
 <form name="loginForm" #f="ngForm" (ngSubmit)="invioSpesa(f)">
+
+  <input type="hidden" class="form-control" id="idSpesa" id="idSpesa" name="idSpesa" idSpesa ngModel #idSpesa="ngModel">
+
   <div class="form-group row">
     <label for="spesa" class="col-sm-2 col-form-label">Spesa</label>
     <div class="col-sm-10">
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="spesa" name="spesa" spesa ngModel #spesa="ngModel"></textarea>
+      <textarea class="form-control" id="spesa" rows="3" id="spesa" name="spesa" spesa ngModel #spesa="ngModel"></textarea>
     </div>
   </div>
   <div class="form-group row">

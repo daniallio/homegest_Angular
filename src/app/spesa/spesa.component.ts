@@ -15,16 +15,10 @@ export class SpesaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getSpesaByUser('DANIALLIO');
-
   }
 
 
 
-getSpesaByUser(codice : String){
 
-  this.spesaService.getAllByUser(codice).subscribe(
-  (data : Spesa[]) => console.log(data))
-}
 
 }

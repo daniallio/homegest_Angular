@@ -32,7 +32,7 @@ this.spesaElenco = form.value.spesa;
 this.invio = form.value.invio;
 this.email = form.value.email
 
-this.spesa.codiceUtente = 'PIZZOMARTA';
+this.spesa.codiceUtente = 'DANIALLIO';
 this.spesa.invioMail = this.invio;
 this.spesa.spesaElenco = this.spesaElenco;
 
