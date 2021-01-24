@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr  *ngFor="let spesa of elencoSpesa">
+    <tr  *ngFor="let spesa of elencoSpesa | paginate: { itemsPerPage: righe, currentPage: pagina }">
       <td style="visibility:hidden;" >{{spesa.idSpesa}}</td>
       <td>{{spesa.spesaElenco}}</td>
       <td>{{spesa.dateListaSpesa}}</td>
@@ -15,20 +15,10 @@
   </tbody>
 </table>
 
-<!--
-<table>
-  <thead></thead>
-  <tbody>
-      <tr class="clickable" *ngFor="let item of items" [routerLink]="['/otherpage/', item.Id]">
-         <td>{{item.name}}</td>
-         <td>
-            <ul>
-               <li *ngFor="let detail of item.details">
-                  {{detail}}
-               </li>
-            </ul>
-         </td>
-      </tr>
-  </tbody>
-</table>
--->
+<div class="clearfix">
+  <pagination-controls
+  (pageChange)="pagina = $event"
+  previousLabel="Precedente"
+  nextLabel="Successivo">
+  </pagination-controls>
+</div>

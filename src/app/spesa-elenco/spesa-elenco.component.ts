@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class SpesaElencoComponent implements OnInit {
 
 elencoSpesa : [Spesa];
-
+pagina = 1;
+righe = 5;
 
   constructor(private spesaService: SpesaService) { }
 

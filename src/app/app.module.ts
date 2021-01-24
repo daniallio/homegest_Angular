@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { FormSpesaComponent } from './form-spesa/form-spesa.component';
 import { FormsModule } from '@angular/forms';
 import { SpesaElencoComponent } from './spesa-elenco/spesa-elenco.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SpesaElencoComponent } from './spesa-elenco/spesa-elenco.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
