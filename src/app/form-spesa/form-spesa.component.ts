@@ -1,8 +1,9 @@
+import { Spesa } from './../class/Spesa';
 import { SpesaService } from './../service/spesa.service';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Spesa } from '../class/Spesa';
+
 
 @Component({
   selector: 'app-form-spesa',
@@ -11,7 +12,7 @@ import { Spesa } from '../class/Spesa';
 })
 export class FormSpesaComponent implements OnInit {
 
-  @Input() spesa: Spesa;
+  @Input()   spesa: Spesa;
 
   spesaElenco : string;
   invio : boolean;
@@ -21,9 +22,11 @@ export class FormSpesaComponent implements OnInit {
 
   ngOnInit(): void {
 
-this.spesa = new Spesa();
+  this.spesa = new Spesa();
+  console.log(this.spesa)
 
-  }
+}
+
 
 
 invioSpesa(form : NgForm){
@@ -35,10 +38,10 @@ this.email = form.value.email
 this.spesa.codiceUtente = 'DANIALLIO';
 this.spesa.invioMail = this.invio;
 this.spesa.spesaElenco = this.spesaElenco;
-
+console.log(form.value.idSpesaa);
 
 this.spesaService.insSpesa(this.spesa).subscribe(
-  (data : Spesa) => console.log(data));
+ (data : Spesa) => console.log(data));
 
 
 }

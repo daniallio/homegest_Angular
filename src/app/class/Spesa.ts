@@ -1,13 +1,13 @@
 import { SpesaInterface } from './../Interfaces/SpesaInterface';
 
 export class Spesa implements SpesaInterface{
-  idSpesa: number;
-  spesaElenco: string;
-  codiceUtente: string;
-  invioMail: boolean;
-  errMail: string;
-  statoMail: string;
-  dateListaSpesa: Date;
+ public idSpesa: number;
+ public spesaElenco: string;
+ public codiceUtente: string;
+ public invioMail: boolean;
+ public errMail: string;
+ public statoMail: string;
+ public dateListaSpesa: Date;
 
 
 

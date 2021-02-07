@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr  *ngFor="let spesa of elencoSpesa | paginate: { itemsPerPage: righe, currentPage: pagina }">
+    <tr  *ngFor="let spesa of elencoSpesa | paginate: { itemsPerPage: righe, currentPage: pagina }" (click)="datiSpesa(spesa)">
       <td style="visibility:hidden;" >{{spesa.idSpesa}}</td>
       <td>{{spesa.spesaElenco}}</td>
       <td>{{spesa.dateListaSpesa}}</td>

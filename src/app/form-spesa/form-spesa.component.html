@@ -1,11 +1,12 @@
+
 <form name="loginForm" #f="ngForm" (ngSubmit)="invioSpesa(f)">
 
-  <input type="hidden" class="form-control" id="idSpesa" id="idSpesa" name="idSpesa" idSpesa ngModel #idSpesa="ngModel">
+  <input type="hidden" class="form-control" id="idSpesa" name="idSpesa" idSpesa ngModel  #idSpesa="ngModel" [(ngModel)]="spesa.idSpesa">
 
   <div class="form-group row">
     <label for="spesa" class="col-sm-2 col-form-label">Spesa</label>
     <div class="col-sm-10">
-      <textarea class="form-control" id="spesa" rows="3" id="spesa" name="spesa" spesa ngModel #spesa="ngModel"></textarea>
+      <textarea class="form-control" id="spesa" rows="3" id="spesa" name="spesa" spesa ngModel #spesaF="ngModel" [(ngModel)]="spesa.spesaElenco"></textarea>
     </div>
   </div>
   <div class="form-group row">
@@ -18,13 +19,18 @@
     <div class="col-sm-2">Invio mail</div>
     <div class="col-sm-10">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="invio" name="invio" invio ngModel #invio="ngModel">
+        <input class="form-check-input" type="checkbox" id="invio" name="invio" invio ngModel #invio="ngModel" [(ngModel)]="spesa.invioMail">
       </div>
     </div>
   </div>
   <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Invia</button>
+    <div class="btn-toolbar">
+      <div>
+          <button type="submit" class="btn btn-primary btn-sm mr-1">Invia</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-danger btn-sm">Elimina</button>
+      </div>
     </div>
   </div>
 </form>

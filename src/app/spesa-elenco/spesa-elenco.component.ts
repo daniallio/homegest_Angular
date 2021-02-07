@@ -1,6 +1,6 @@
 import { Spesa } from './../class/Spesa';
 import { SpesaService } from './../service/spesa.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-spesa-elenco',
@@ -12,6 +12,8 @@ export class SpesaElencoComponent implements OnInit {
 elencoSpesa : [Spesa];
 pagina = 1;
 righe = 5;
+@Output() emettoSpesa = new EventEmitter<Spesa>();
+
 
   constructor(private spesaService: SpesaService) { }
 
@@ -26,5 +28,13 @@ righe = 5;
     )
 
   }
+
+
+  datiSpesa(spesa : Spesa){
+    this.emettoSpesa.emit(spesa);
+    console.log(spesa);
+  }
+
+
 
 }

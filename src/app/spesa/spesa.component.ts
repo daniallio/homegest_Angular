@@ -11,13 +11,19 @@ import { SpesaService } from '../service/spesa.service';
 })
 export class SpesaComponent implements OnInit {
 
+spesaParent : Spesa;
+
   constructor(private spesaService : SpesaService) { }
 
   ngOnInit(): void {
-
+    this.spesaParent = new Spesa();
   }
 
+  setSpesa($event){
 
+    this.spesaParent = $event;
+
+  }
 
 
 
