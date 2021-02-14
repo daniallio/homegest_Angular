@@ -28,6 +28,12 @@ export class SpesaService {
 
   }
 
+  delSpesa (idSpesa){
+
+    return this.http.delete<Spesa>(this.APIURL + '/elimina/' + idSpesa);
+
+  }
+
 
 
 

@@ -46,5 +46,14 @@ this.spesaService.insSpesa(this.spesa).subscribe(
 
 }
 
+eliminaSpesa(idSpesa : number){
+  console.log("elimino spesa" + idSpesa)
+
+  this.spesaService.delSpesa(idSpesa).subscribe(
+    (data) => console.log(data));
+
+
+}
+
 
 }

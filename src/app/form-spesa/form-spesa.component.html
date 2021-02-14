@@ -29,7 +29,7 @@
           <button type="submit" class="btn btn-primary btn-sm mr-1">Invia</button>
       </div>
       <div>
-        <button type="button" class="btn btn-danger btn-sm">Elimina</button>
+        <button type="button" class="btn btn-danger btn-sm"  *ngIf="spesa.idSpesa !== null" (click)="eliminaSpesa(spesa.idSpesa)">Elimina</button>
       </div>
     </div>
   </div>
