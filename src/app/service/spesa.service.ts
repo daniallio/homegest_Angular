@@ -17,24 +17,22 @@ export class SpesaService {
   }
 
   getAllByUser(codice : String){
-
     return this.http.get<Spesa[]>(this.APIURL + '/user/' + codice);
-
   }
 
   insSpesa (spesa : Spesa){
-
     return this.http.post<Spesa>(this.APIURL + '/inserisci',spesa);
-
   }
 
   delSpesa (idSpesa){
-
     return this.http.delete<Spesa>(this.APIURL + '/elimina/' + idSpesa);
-
   }
 
 
+  updSpesa (spesa : Spesa){
 
+    return this.http.put<Spesa>(this.APIURL + '/aggiorna', spesa);
+
+  }
 
 }

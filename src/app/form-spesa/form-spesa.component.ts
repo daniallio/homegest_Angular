@@ -3,6 +3,7 @@ import { SpesaService } from './../service/spesa.service';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { NgForm } from '@angular/forms';
 export class FormSpesaComponent implements OnInit {
 
   @Input()   spesa: Spesa;
+  @Input() messaggioOK : boolean = false;
+  messaggioResp : string; //messaggio di ok
 
   spesaElenco : string;
   invio : boolean;
@@ -23,7 +26,7 @@ export class FormSpesaComponent implements OnInit {
   ngOnInit(): void {
 
   this.spesa = new Spesa();
-  console.log(this.spesa)
+console.log(this.messaggioOK)
 
 }
 
@@ -31,18 +34,33 @@ export class FormSpesaComponent implements OnInit {
 
 invioSpesa(form : NgForm){
 
-this.spesaElenco = form.value.spesa;
+/*this.spesaElenco = form.value.spesa;
 this.invio = form.value.invio;
-this.email = form.value.email
+this.email = form.value.email*/
 
 this.spesa.codiceUtente = 'DANIALLIO';
-this.spesa.invioMail = this.invio;
-this.spesa.spesaElenco = this.spesaElenco;
-console.log(form.value.idSpesaa);
+this.spesa.invioMail = form.value.invio;
+this.spesa.spesaElenco = form.value.spesa;
 
-this.spesaService.insSpesa(this.spesa).subscribe(
- (data : Spesa) => console.log(data));
+//se non esite l'id sono in inserimento
 
+if(this.spesa.idSpesa == null){
+  this.spesaService.insSpesa(this.spesa).subscribe(
+    (data : Spesa) => console.log('inserisco spesa ' + data));
+}else{
+  this.spesaService.updSpesa(this.spesa).subscribe(
+    (data : Spesa) => {
+
+      this.messaggioResp = 'Spesa aggiornata correttamente';
+     // this.messaggioOK = true;
+      console.log('aggiorno spesa ' + data)
+    }
+  );
+}
+
+
+console.log('messaggioooooo ' + this.messaggioOK)
+this.messaggioOK = true;
 
 }
 
