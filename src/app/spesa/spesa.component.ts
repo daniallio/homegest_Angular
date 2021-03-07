@@ -19,7 +19,7 @@ messaggioRespParent : boolean = false;
 
   ngOnInit(): void {
     this.spesaParent = new Spesa();
-    console.log('ora' + this.messaggioRespParent);
+    console.log('ora SPESATS' + this.messaggioRespParent);
 
 
   }
@@ -28,7 +28,7 @@ messaggioRespParent : boolean = false;
 
     this.spesaParent = $event;
     this.messaggioRespParent = false;
-    console.log('ora2' + this.messaggioRespParent);
+    console.log('setSpesa ' + this.messaggioRespParent);
 
   }
 

@@ -33,8 +33,12 @@
       </div>
     </div>
   </div>
+  <div class="alert alert-success p-1" role="alert" *ngIf="messaggioOK">
+    {{messaggioResp}}
+   </div>
+   <div class="alert alert-danger p-1" role="alert" *ngIf="messaggioERR">
+    {{messaggioResp}}
+   </div>
 </form>
-<div class="alert alert-success p-1" role="alert" ng-show="messaggioOK === true">
-  {{messaggioResp}}
-</div>
+
 
